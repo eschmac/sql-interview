@@ -2,7 +2,7 @@
 
 <!-- description:start -->
 
-<p>You are given two string arrays, <code>names</code> and <code>columns</code>, both of size <code>n</code>. The <code>i<sup>th</sup></code> table is represented by the name <code>names[i]</code> and contains <code>columns[i]</code> number of columns.</p>
+<p>You are given two arrays, <code>names</code> and <code>columns</code>, both of size <code>n</code>. The <code>i<sup>th</sup></code> table is represented by the name <code>names[i]</code> and contains <code>columns[i]</code> number of columns.</p>
 
 <p>You need to implement a class that supports the following <strong>operations</strong>:</p>
 
@@ -14,33 +14,29 @@
 </ul>
 
 <p>Implement the <code>SQL</code> class:</p>
-<li><code>SQL(String[] names, int[] columns)</code>
+<code>SQL(String[] names, int[] columns)</code>
 <ul>
 	<li>Creates the <code>n</code> tables.</li>
 </ul>
-</li>
-<li><code>bool ins(String name, String[] row)</code>
+<code>bool ins(String name, String[] row)</code>
 <ul>
 	<li>Inserts <code>row</code> into the table <code>name</code> and returns <code>true</code>.</li>
 	<li>If <code>row.length</code> <strong>does not</strong> match the expected number of columns, or <code>name</code> is <strong>not</strong> a valid table, returns <code>false</code> without any insertion.</li>
 </ul>
-</li>
-<li><code>void rmv(String name, int rowId)</code>
+<code>void rmv(String name, int rowId)</code>
 <ul>
 	<li>Removes the row <code>rowId</code> from the table <code>name</code>.</li>
 	<li>If <code>name</code> is <strong>not</strong> a valid table or there is no row with id <code>rowId</code>, no removal is performed.</li>
 </ul>
-</li>
-<li><code>String sel(String name, int rowId, int columnId)</code>
+<code>String sel(String name, int rowId, int columnId)</code>
 <ul>
 	<li>Returns the value of the cell at the specified <code>rowId</code> and <code>columnId</code> in the table <code>name</code>.</li>
 	<li>If <code>name</code> is <strong>not</strong> a valid table, or the cell <code>(rowId, columnId)</code> is <strong>invalid</strong>, returns <code>&quot;&lt;null&gt;&quot;</code>.</li>
 </ul>
-</li>
-<li><code>String[] exp(String name)</code>
+<code>String[] exp(String name)</code>
 <ul>
 	<li>Returns the rows present in the table <code>name</code>.</li>
-	<li>If name is <strong>not</strong> a valid table, returns an empty array. Each row is represented as a string, with each cell value (<strong>including</strong> the row&#39;s id) separated by a <code>&quot;,&quot;</code>.</li>
+	<li>If name is <strong>not</strong> a valid table, returns an empty array. Each row is represented as a string, with each cell value (<strong>including</strong> the row&#39;s id) separated by a <code>&quot;,&quot;</code>.
 </ul>
 </li>
 
