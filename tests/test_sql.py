@@ -37,3 +37,34 @@ def test_sql_example_1():
     for i, o in enumerate(outputs):
         if o != expected_outputs[i]:
             pytest.fail(f"step {i} should've returned {expected_outputs[i]} but returned {o}")
+
+def test_sql_example_2():
+    s = SQL(["one", "two", "three"], [2, 3, 1]) # Creates three tables.
+
+    outputs = []
+
+    # Adds a row to the table "two" with id 1. Returns True. 
+    outputs.append(s.ins("two", ["first", "second", "third"]))
+
+    # Returns the value "third" from the third column 
+    # in the row with id 1 of the table "two".
+    outputs.append(s.sel("two", 1, 3))
+
+    # Removes the first row of the table "two".
+    outputs.append(s.rmv("two", 1))
+
+    # Returns "<null>" as the cell with id 1 
+    # has been removed from table "two".
+    outputs.append(s.sel("two", 1, 2))
+
+    # Returns False as number of columns are not correct.
+    outputs.append(s.ins("two", ["fourth", "fifth"]))
+
+    # Adds a row to the table "two" with id 2. Returns True.
+    outputs.append(s.ins("two", ["fourth", "fifth", "sixth"]))
+    
+    expected_outputs = [True,"third",None,"<null>",False,True]
+    for i, o in enumerate(outputs):
+        if o != expected_outputs[i]:
+            pytest.fail(f"step {i} should've returned {expected_outputs[i]} but returned {o}")
+            
