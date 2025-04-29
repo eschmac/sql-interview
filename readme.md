@@ -156,6 +156,4 @@ sQL.ins(&quot;two&quot;, [&quot;fourth&quot;, &quot;fifth&quot;, &quot;sixth&quo
 
 <p>&nbsp;</p>
 
-<strong>Follow-up:</strong> Which approach would you choose if the table might become sparse due to many deletions, and why? Consider the impact on memory usage and performance.
-
 <!-- description:end -->
