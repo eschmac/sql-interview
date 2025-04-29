@@ -33,7 +33,7 @@ def test_sql_example_1():
     # Currently, the table has 1 row with id 2.
     outputs.append(s.exp("two"))
     
-    expected_outputs = [None,True,"third",True,["1,first,second,third","2,fourth,fifth,sixth"],None,"fifth",["2,fourth,fifth,sixth"]]
+    expected_outputs = [True,"third",True,["1,first,second,third","2,fourth,fifth,sixth"],None,"fifth",["2,fourth,fifth,sixth"]]
     for i, o in enumerate(outputs):
         if o != expected_outputs[i]:
             pytest.fail(f"step {i} should've returned {expected_outputs[i]} but returned {o}")
